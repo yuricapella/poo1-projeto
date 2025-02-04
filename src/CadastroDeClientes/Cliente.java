@@ -1,6 +1,6 @@
 package CadastroDeClientes;
 
-public class Cliente {
+public abstract class Cliente {
     private String nome;
     private String documento; //Dois tipos de clientes: Pessoa Física (CPF) ou Pessoa Jurídica (CNPJ)
     private String endereco;
@@ -8,9 +8,9 @@ public class Cliente {
 
     public Cliente(String nome, String documento, String endereco, String telefone) {
         this.nome = nome;
+        this.documento = documento;
         this.endereco = endereco;
         this.telefone = telefone;
-        this.documento = documento;
     }
 
     public String getNome() {
@@ -29,13 +29,4 @@ public class Cliente {
         return telefone;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "nome='" + nome + '\'' +
-                ", documento='" + documento + '\'' +
-                ", endereco='" + endereco + '\'' +
-                ", telefone='" + telefone + '\'' +
-                '}';
-    }
 }
