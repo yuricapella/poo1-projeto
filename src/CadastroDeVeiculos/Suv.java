@@ -1,14 +1,14 @@
 package CadastroDeVeiculos;
 
-public class Moto extends Veiculo {
+public class Suv extends VeiculoDeLuxo {
 
-    public Moto(String modelo, String placa, double valorDiaria, boolean disponivel) {
+    public Suv(String modelo, String placa, double valorDiaria, boolean disponivel) {
         super(modelo, placa, valorDiaria, disponivel);
     }
 
     @Override
     public String toString() {
-        return "Moto{" +
+        return "SUV{" +
                 "modelo='" + getModelo() + '\'' +
                 ", placa='" + getPlaca() + '\'' +
                 ", valorDiaria=" + getValorDiaria() +
