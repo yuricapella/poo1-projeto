@@ -13,10 +13,10 @@ public class Locacao {
         this.cliente = cliente;
         this.veiculo = veiculo;
         this.diasDeLocacao = diasDeLocacao;
-        this.precoTotalLocacao = calcularTotalLocao();
+        this.precoTotalLocacao = calcularTotalLocacao();
     }
 
-    private double calcularTotalLocao() {
+    private double calcularTotalLocacao() {
         return diasDeLocacao * veiculo.getValorDiaria();
     }
 
@@ -24,7 +24,7 @@ public class Locacao {
         veiculo.setDisponivel(true);
     }
 
-    public double receberValorDaLocadcao() {
+    public double receberValorDaLocacao() {
         return precoTotalLocacao;
     }
 }
