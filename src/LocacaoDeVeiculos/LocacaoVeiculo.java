@@ -13,7 +13,7 @@ public class LocacaoVeiculo {
             veiculo.setDisponivel(false);
             Locacao locacao = new Locacao(cliente, veiculo, diasDeLocacao);
             locacoes.add(locacao);
-            System.out.printf("Locação feita para %s\n\t no valor de R$ %.2f", cliente.getNome(), locacao.receberValorDaLocadcao());
+            System.out.printf("Locação feita para %s\n\t no valor de R$ %.2f", cliente.getNome(), locacao.receberValorDaLocacao());
         } else {
             System.out.println("Veículo Indisponível");
         }
