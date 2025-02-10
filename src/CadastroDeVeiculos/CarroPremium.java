@@ -6,8 +6,8 @@ public class CarroPremium extends VeiculoDeLuxo {
         super(modelo, placa, valorDiaria, disponivel);
     }
 
-    @Override
-    public String toString() {
+
+    public String converterParaString() {
         return "CarroPremium{" +
                 "modelo='" + getModelo() + '\'' +
                 ", placa='" + getPlaca() + '\'' +

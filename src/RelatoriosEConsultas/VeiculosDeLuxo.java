@@ -7,11 +7,11 @@ import CadastroDeVeiculos.Suv;
 
 public class VeiculosDeLuxo {
 
-    public static void mostrarVeiculosDeLuxo(List<Veiculo> veiculos){
+    public void mostrarVeiculosDeLuxo(List<Veiculo> veiculos){
         System.out.println("Veículos de Luxo");
         System.out.println("------------------------");
         for (Veiculo veiculo: veiculos) {
-            if (CadastroDeVeiculos.Suv.toString(veiculo).contains("CarroPremium") || CadastroDeVeiculos.CarroPremium.toString(veiculo).contains("SUV")) {
+            if (CadastroDeVeiculos.Suv.converterParaString(veiculo).contains("CarroPremium") || CadastroDeVeiculos.CarroPremium.converterParaString(veiculo).contains("SUV")) {
                 System.out.println(veiculo);
             }
         }

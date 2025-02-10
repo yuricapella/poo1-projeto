@@ -4,8 +4,7 @@ import java.util.List;
 import CadastroDeVeiculos.Veiculo;
 
 public class VeiculosAlugados {
-
-    public static void mostrarVeiculosAlugados(List<Veiculo> veiculos){
+    public void mostrarVeiculosAlugados(List<Veiculo> veiculos){
         System.out.println("Veículos Alugados");
         System.out.println("------------------------");
         for (Veiculo veiculo: veiculos) {

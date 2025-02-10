@@ -6,8 +6,8 @@ public class Suv extends VeiculoDeLuxo {
         super(modelo, placa, valorDiaria, disponivel);
     }
 
-    @Override
-    public String toString() {
+
+    public String converterParaString() {
         return "SUV{" +
                 "modelo='" + getModelo() + '\'' +
                 ", placa='" + getPlaca() + '\'' +
