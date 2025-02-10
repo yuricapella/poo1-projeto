@@ -48,12 +48,13 @@ Para detalhes completos sobre o enunciado do projeto, consulte o arquivo [ENUNCI
 2. Navegue até o diretório do projeto:
     ```bash
     cd poo1-projeto
+    cd src
+    cd RelatoriosEConsultas
     ```
 
 3. Compile e execute o projeto:
     ```bash
-    javac App.java
-    java App
+    java App.java
     ```
 
 4. O programa exibirá um menu interativo, onde o usuário pode:
