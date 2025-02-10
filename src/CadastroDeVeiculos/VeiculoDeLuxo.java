@@ -1,12 +1,13 @@
 package CadastroDeVeiculos;
 
-public abstract class VeiculoDeLuxo extends Veiculo implements ServicosDeLuxo {
+import ServicosDeLuxo.ServicoLuxo;
 
-    public VeiculoDeLuxo(String modelo, String placa, double valorDiaria, boolean disponivel) {
-        super(modelo, placa, valorDiaria, disponivel);
+public abstract class VeiculoDeLuxo extends Veiculo implements ServicoLuxo {
+
+    public VeiculoDeLuxo(String modelo, String placa, double valorDiaria, boolean disponivel, TipoVeiculo tipo) {
+        super(modelo, placa, valorDiaria, disponivel, tipo);
     }
 
-    @Override
     public void oferecerServicoDeLuxo(Boolean ativar) {
         if (ativar) {
             System.out.println("Serviço de luxo ativado." + getModelo());
