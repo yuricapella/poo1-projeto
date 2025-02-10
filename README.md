@@ -1,57 +1,85 @@
-# Explicação do Projeto, Métodos e Lógica
+# Sistema de Locação de Veículos
 
-## Visão Geral
-Este projeto é um sistema de locação de veículos que permite ao usuário ver uma lista de veículos (divididos em COMUM e LUXO), selecionar um veículo disponível e alugá-lo. Além disso, o sistema gerencia os clientes e exibe tudo de forma organizada num menu interativo.
+## Descrição  
 
-## Componentes do Projeto
+Este projeto é um sistema para alugar carros. Ele mostra uma lista de veículos separados em dois tipos: **COMUM** e **LUXO**. O usuário pode escolher um carro disponível e alugá-lo.  
 
-### 1. CadastroDeClientes
-- **Cliente.java:**  
-  Guarda as informações de cada cliente: nome, documento, endereço, telefone e um ID único.  
-  - **Métodos importantes:**  
-    - *Getters:* Para acessar os dados do cliente (por exemplo, `getNome()`, `getIdCliente()`).
-    - *toString():* Exibe os dados do cliente de forma organizada.
+Se quiser ver os carros que já foram alugados, o sistema também mostra:  
+- Qual carro foi alugado  
+- Quem alugou  
+- O preço da diária  
+- Quantos dias foi alugado  
+- O valor total do aluguel  
 
-### 2. CadastroDeVeiculos
-- **SistemaVeiculos.java:**  
-  Essa classe tem vários métodos:
-  - **gerarVeiculos:** Cria uma lista com veículos (caminhões, motos, carros comuns, carros premium e SUVs) com nomes e placas numeradas.
-  - **verificaVeiculosPorTipo:** Filtra os veículos por tipo (COMUM ou LUXO) usando o enum.
-  - **verificaDisponibilidadeVeiculos:** Retorna apenas os veículos que estão disponíveis para locação.
-  - **mostrarVeiculos:** Exibe os veículos no terminal de maneira organizada.
-- **TipoVeiculo.java (enum):**  
-  Define dois tipos de veículos: `COMUM` e `LUXO`.
+Tudo isso aparece de forma organizada em um menu fácil de usar.
 
-### 3. LocacaoDeVeiculos
-- **Locacao.java:**  
-  Representa uma locação, armazenando o cliente, o veículo alugado, o período de locação e o valor total da locação.
-- **LocacaoVeiculo.java:**  
-  Gerencia a locação dos veículos. Verifica se o veículo está disponível, aluga-o (tornando-o indisponível) e registra a locação.
+## Enunciado do Projeto
 
-### 4. RelatoriosEConsultas
-- **App.java:**  
-  É o ponto de entrada do programa. Contém o método `main()` que mostra um menu interativo onde o usuário pode:
-  - Ver veículos comuns
-  - Ver veículos alugados
-  - Ver veículos de luxo
-  - Listar os clientes
-  - Encerrar o programa
-  O menu usa um `while` com um `switch` para executar a ação escolhida.
-- **MenuLocacao.java:**  
-  Apresenta um sub-menu para locação. Exibe os veículos disponíveis, permite ao usuário digitar a placa do veículo que deseja alugar e chama a lógica de locação.
+Para detalhes completos sobre o enunciado do projeto, consulte o arquivo [ENUNCIADO.md](ENUNCIADO.md).
 
-### 5. ServicoDeLuxo.java
+## Funcionalidades
 
-- Responsabilidade: Controlar os serviços de luxo dos veículos de luxo, com métodos para ativar ou desativar o serviço, conforme os requisitos do sistema.
+- Exibição de veículos disponíveis, filtrados por tipo (COMUM ou LUXO) e disponibilidade.
+- Realização de locações, que registram o veículo alugado, o cliente que efetuou a locação, o período e o valor total.
+- Exibição dos veículos alugados juntamente com o cliente que os alugou.
+- Menu interativo que permite ao usuário escolher entre visualizar veículos comuns, veículos de luxo, veículos alugados ou encerrar o programa.
+- Controle dos serviços de luxo dos veículos de luxo, com métodos para ativar ou desativar esses serviços.
 
-## Lógica do Sistema
-1. **Geração e Exibição dos Veículos:**  
-   O método `gerarVeiculos` cria uma lista com veículos de vários tipos, que depois são filtrados por disponibilidade ou tipo (COMUM/LUXO) e exibidos no terminal.
-2. **Interação com o Usuário:**  
-   O `App.java` apresenta um menu com várias opções. O usuário escolhe uma opção e o programa executa a função correspondente (por exemplo, mostrar veículos ou alugar um veículo).
-3. **Locação de Veículos:**  
-   Ao escolher alugar um veículo, o `MenuLocacao.java` exibe os veículos disponíveis. O usuário informa a placa do veículo desejado e, se ele estiver disponível, a locação é registrada, e o veículo se torna indisponível.
-4. **Seleção de Clientes:**  
-   Os clientes são gerados e listados para que o usuário possa identificar quem está alugando o veículo.
+## Tecnologias Utilizadas
 
+- **Java**: Linguagem de programação utilizada para o desenvolvimento do projeto.
+- **Scanner**: Utilizado para capturar a entrada do usuário.
+- **Enums**: Para definir os tipos de veículos (COMUM e LUXO) e os tipos de clientes (PESSOA_FISICA e PESSOA_JURIDICA).
 
+## Como Rodar o Projeto
+
+### Pré-requisitos
+
+- **JDK 15 ou superior instalado**  
+  *Nota*: Recomenda-se o uso de JDK 15 ou superior para evitar problemas.
+
+### Passos
+
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/yuricapella/poo1-projeto.git
+    ```
+
+2. Navegue até o diretório do projeto:
+    ```bash
+    cd poo1-projeto
+    ```
+
+3. Compile e execute o projeto:
+    ```bash
+    javac App.java
+    java App
+    ```
+
+4. O programa exibirá um menu interativo, onde o usuário pode:
+    - Visualizar veículos comuns
+    - Visualizar veículos de luxo
+    - Visualizar veículos alugados (com os clientes que efetuaram as locações)
+    - Encerrar o programa
+
+## Estrutura do Projeto
+
+- **Cadastro de Clientes:**
+  - **Cliente.java**: Armazena as informações dos clientes, como nome, documento, endereço, telefone e um ID único.
+  - **SistemaClientes.java**: Gerencia a criação, filtragem por tipo e a exibição dos clientes.
+  - **TipoCliente.java (enum):** Define os tipos de clientes, como PESSOA_FISICA (CPF) e PESSOA_JURIDICA (CNPJ).
+
+- **Cadastro de Veículos:**
+  - **SistemaVeiculos.java**: Gerencia a geração de veículos, filtragem por tipo e disponibilidade, e a exibição dos veículos.
+  - **TipoVeiculo.java (enum):** Define os tipos de veículos: COMUM e LUXO.
+
+- **Locação de Veículos:**
+  - **Locacao.java**: Representa uma locação, contendo informações sobre o cliente, o veículo alugado, o período de locação e o valor total.
+  - **LocacaoVeiculo.java**: Gerencia o processo de locação, verificando a disponibilidade do veículo e registrando a locação.
+
+- **Relatórios e Consultas:**
+  - **App.java**: Classe principal que contém o método `main()` e apresenta o menu interativo para o usuário.
+  - **MenuLocacao.java**: Exibe um sub-menu para a locação de veículos, permitindo que o usuário digite a placa do veículo desejado e registre a locação.
+
+- **Serviço de Luxo:**
+  - **ServicoDeLuxo.java**: Controla os serviços de luxo dos veículos de luxo, oferecendo métodos para ativar ou desativar esses serviços conforme os requisitos do sistema.
